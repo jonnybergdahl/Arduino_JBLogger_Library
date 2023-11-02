@@ -1,0 +1,23 @@
+{
+  "name": "JBLogger",
+  "version": "1.0.0",
+  "author": "Jonny Bergdahl",
+  "maintainer": "Jonny Bergdahl <github@bergdahl.org>",
+  "sentence": "A simple to use logger library for Arduino",
+  "paragraph": "This library provides a simple and versatile logger for Arduino with different log levels and customizable settings.",
+  "category": "Other",
+  "url": "https://github.com/jonnybergdahl/Arduino_JBLogger_Library",
+  "architectures": "*",
+  "types": [
+    "Contributed",
+    "Official"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jonnybergdahl/Arduino_JBLogger_Library.git"
+  },
+  "dependencies": {},
+  "includes": "JBLogger.h",
+  "keywords": "logger, log, Arduino, logging",
+  "license": "MIT"
+}

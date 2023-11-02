@@ -1,0 +1,8 @@
+Logger    KEYWORD1
+LogLevel  KEYWORD3
+log       KEYWORD2
+warning   KEYWORD2
+info      KEYWORD2
+warning   KEYWORD2
+debug     KEYWORD2
+```
