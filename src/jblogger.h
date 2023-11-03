@@ -41,7 +41,7 @@ enum LogLevel {
 ///
 /// Depending on the settings, it will output log messages in the following format:
 ///
-/// [TIMESTAMP] [LOG_LEVEL] [MODULE_NAME]: MESSAGE
+/// (timestamp) log_level module_name: message
 ///
 class JBLogger {
 public:
