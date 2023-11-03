@@ -9,13 +9,13 @@ fi
 # Build docs
 start_path=$(pwd)
 /opt/homebrew/bin/doxygen Doxyfile
-rm -r ~/Developer/jonnybergdahl/jonnybergdahl.github.io/docs
-cp -r docs ~/Developer/jonnybergdahl/jonnybergdahl.github.io/docs
+rm -r ~/Developer/jonnybergdahl/jonnybergdahl.github.io/jblogger
+cp -r docs/* ~/Developer/jonnybergdahl/jonnybergdahl.github.io/jblogger
 
 # Commit and push docs
 cd ~/Developer/jonnybergdahl/jonnybergdahl.github.io
-git checkout gh-pages
-git add docs
+git checkout main
+git add jblogger
 if [ -n "$(git status --porcelain)" ]; then
   echo "Branch gh-pages is up to date,nothing to do."
   exit 1
@@ -24,6 +24,6 @@ if [ -n "$(git status --porcelain)" ]; then
    echo "Branch gh-pages is up to date,nothing to do."
 else
   git commit -m "Update docs"
-  git push origin gh-pages
+  git push main
 fi
 cd "$start_path"
