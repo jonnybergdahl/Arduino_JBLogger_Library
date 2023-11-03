@@ -9,7 +9,7 @@ fi
 # Build docs
 start_path=$(pwd)
 /opt/homebrew/bin/doxygen Doxyfile
-rm -r ~/Developer/jonnybergdahl/jonnybergdahl.github.io/jblogger
+rm -r ~/Developer/jonnybergdahl/jonnybergdahl.github.io/jblogger/*
 cp -r docs/* ~/Developer/jonnybergdahl/jonnybergdahl.github.io/jblogger
 
 # Commit and push docs
