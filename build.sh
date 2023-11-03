@@ -2,4 +2,4 @@
 
 # Build docs
 /opt/homebrew/bin/doxygen Doxyfile
-open extras/html/index.html
+open docs/index.html
