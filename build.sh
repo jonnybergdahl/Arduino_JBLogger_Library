@@ -18,7 +18,7 @@ git checkout main
 git add jblogger
 if [ -n "$(git status --porcelain)" ]; then
   git commit -m "Update docs"
-  git push main
+  git push
 else
    echo "Branch main is up to date,nothing to do."
 fi
