@@ -6,3 +6,4 @@ This library provides a simple and versatile logger for Arduino with different l
 
 
 
+[Documentation](https://jonnybergdahl.github.io/Bergdahl_JBLogger/)
