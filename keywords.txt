@@ -5,4 +5,5 @@ warning   KEYWORD2
 info      KEYWORD2
 warning   KEYWORD2
 debug     KEYWORD2
+trace     KEYWORD2
 ```
