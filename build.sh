@@ -7,7 +7,13 @@ if [ -n "$(git status --porcelain)" ]; then
 fi
 
 # Build docs
+start_path=$(pwd)
 /opt/homebrew/bin/doxygen Doxyfile
+rm -r ~/Developer/jonnybergdahl/jonnybergdahl.github.io/docs
+cp -r docs ~/Developer/jonnybergdahl/jonnybergdahl.github.io/docs
+
+# Commit and push docs
+cd ~/Developer/jonnybergdahl/jonnybergdahl.github.io
 git checkout gh-pages
 git add docs
 if [ -n "$(git status --porcelain)" ]; then
@@ -20,4 +26,4 @@ else
   git commit -m "Update docs"
   git push origin gh-pages
 fi
-git checkout main
+cd "$start_path"
