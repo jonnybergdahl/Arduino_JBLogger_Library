@@ -17,9 +17,9 @@ cd ~/Developer/jonnybergdahl/jonnybergdahl.github.io
 git checkout main
 git add jblogger
 if [ -n "$(git status --porcelain)" ]; then
-   echo "Branch main is up to date,nothing to do."
-else
   git commit -m "Update docs"
   git push main
+else
+   echo "Branch main is up to date,nothing to do."
 fi
 cd "$start_path"
