@@ -1,5 +1,5 @@
 #!/usr/bin/env zsh
 
 # Build docs
-doxygen Doxyfile
+/opt/homebrew/bin/doxygen Doxyfile
 open extras/html/index.html
