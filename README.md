@@ -28,7 +28,7 @@ To get started with JBLogger, include the library in your Arduino sketch and cre
 #include <JBLogger.h>
 
 JBLogger logger("MyModule", LOG_LEVEL_DEBUG);
-``
+```
 
 Here's an example of how to log messages with different log levels:
 
