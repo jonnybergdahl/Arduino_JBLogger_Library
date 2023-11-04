@@ -1,10 +1,8 @@
 # JBLogger - A Simple Logger Library for Arduino
 
-![Version](https://img.shields.io/badge/Version-1.0.0-blue)
-![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
-![Arduino Compatible](https://img.shields.io/badge/Arduino-Compatible-blue)
-![GitHub release](https://img.shields.io/github/v/release/jonnybergdahl/Bergdahl_JBLogger)
+![GitHub release](https://img.shields.io/github/v/release/jonnybergdahl/Arduino_JBLogger_Library)
 [![Arduino Library Manager](https://img.shields.io/static/v1?label=Arduino&message=v1.0.0&logo=arduino&logoColor=white&color=blue)](https://www.ardu-badge.com/ArduinoJson/6.21.3)
+![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
 
 **JBLogger** is a lightweight and easy-to-use logger library for Arduino. It allows you to add logging capabilities to your Arduino projects with various log levels, message formatting, and customization options.
 
