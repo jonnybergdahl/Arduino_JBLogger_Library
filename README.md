@@ -11,14 +11,18 @@
 - Log messages with different log levels: ERROR, WARNING, INFO, DEBUG, and TRACE.
 - Control whether to display the log level, module name, and timestamp in log messages.
 - Support for various message formats, including const char*, String, and std::string (if enabled).
-- Support for logging hex and ASCII 
+- Support for logging hex and ASCII binary buffers.
 - Simple and straightforward API for logging messages.
 
 ## Installation
 
-1. Download the [latest release](https://github.com/jonnybergdahl/Bergdahl_JBLogger/releases) from the GitHub repository.
-2. In the Arduino IDE, navigate to **Sketch > Include Library > Add .ZIP Library** and select the downloaded ZIP file.
-3. The JBLogger library is now installed and ready to use in your Arduino projects.
+You can install the JBLogger library in the Arduino IDE using the Library Manager. Follow these steps:
+
+1. Open the Arduino IDE.
+2. Go to the "Sketch" menu and select "Include Library" -> "Manage Libraries..."
+3. In the Library Manager, type "JBLogger" in the search bar.
+4. When the JBLogger library appears in the list, click the "Install" button.
+5. The library will be downloaded and installed in your Arduino IDE.
 
 ## Usage
 
