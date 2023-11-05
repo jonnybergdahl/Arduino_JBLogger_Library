@@ -81,8 +81,8 @@ This will output the data in the following format to the serial monitor:
 
 traceDump():
 ```
-(31059) T LOG: 00000000: 54 65 78 74 0d 0a 4d 6f 72 65 20 74 65 78 74 09  T e x t . . M o r e   t e x t .
-(31071) T LOG: 00000010: 7f 20 31 32 33 34 35 ff                          .   1 2 3 4 5 .                         
+(31059) T LOG: 00000000: 54 65 78 74 0d 0a 4d 6f 72 65 20 74 65 78 74 09  Text..More text.
+(31071) T LOG: 00000010: 7f 20 31 32 33 34 35 ff                          . 12345.                         
 ```
 traceHexDump():
 ```
