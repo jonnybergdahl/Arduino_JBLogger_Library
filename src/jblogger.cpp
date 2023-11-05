@@ -111,9 +111,8 @@ void JBLogger::traceDump(const void* buffer, uint32_t size) {
 					c = '.';
 				}
 				_output.print(c);
-				_output.print(' ');
 			} else {
-				_output.print("   ");
+				_output.print(' ');
 			}
 		}
 		_output.println();
