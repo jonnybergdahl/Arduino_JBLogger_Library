@@ -23,7 +23,7 @@
 #include <avr/pgmspace.h>
 #endif
 
-#define JBLOGGER_VERSION "1.0.0-beta"	///< Version of the library
+#define JBLOGGER_VERSION "1.0.1"	///< Version of the library
 #define MAX_MESSAGE_LENGTH 128		///< Maximum length of a formatted log message
 
 /// @brief Log levels
