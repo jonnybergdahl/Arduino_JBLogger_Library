@@ -23,7 +23,7 @@
 #include <avr/pgmspace.h>
 #endif
 
-#define JBLOGGER_VERSION "1.0.1"	///< Version of the library
+#define JBLOGGER_VERSION "1.0.2"	///< Version of the library
 #define MAX_MESSAGE_LENGTH 128		///< Maximum length of a formatted log message
 
 /// @brief Log levels
@@ -255,6 +255,10 @@ public:
 	///
 	void setOutput(Stream &stream);
 
+	/// @brief Returns the output stream for logging.
+	///	@return A reference to the output stream where log messages will be written.
+	Stream& getOutput();
+
 	/// @brief Sets the minimum log level for messages to be logged.
 	///
 	/// This function allows you to specify the minimum log level for messages to be logged.
@@ -264,6 +268,10 @@ public:
 	/// @param level The minimum log level to be logged.
 	///
 	void setLogLevel(LogLevel level);
+
+	/// @brief Returns the minimum log level for messages to be logged.
+	/// @return The minimum log level for messages to be logged.
+	LogLevel getLogLevel();
 
 	/// @brief Specifies whether the log level should be displayed in log messages.
 	///
@@ -275,6 +283,10 @@ public:
 	///
 	void setShowLogLevel(bool value);
 
+	/// @brief Returns whether the log level should be displayed in log messages.
+	/// @return A boolean value indicating whether the log level should be displayed in log messages.
+	bool getShowLogLevel() const;
+
 	/// @brief Specifies whether the module name should be displayed in log messages.
 	///
 	/// This function allows you to control whether the module name should be included in
@@ -284,6 +296,10 @@ public:
 	/// @param value A boolean value indicating whether to show the module name in log messages.
 	///
 	void setShowModuleName(bool value);
+
+	/// @brief Returns whether the module name should be displayed in log messages.
+	/// @return A boolean value indicating whether the module name should be displayed in log messages.
+	bool getShowModuleName() const;
 
 	/// Set whether to display timestamps in log messages.
 	///
@@ -297,6 +313,10 @@ public:
 	/// @param value A boolean value indicating whether to show timestamps in log messages.
 	///
 	void setShowTimestamp(bool value);
+
+	/// @brief Returns whether timestamps should be displayed in log messages.
+	/// @return A boolean value indicating whether timestamps should be displayed in log messages.
+	bool getShowTimestamp() const;
 
 private:
 	LogLevel _logLevel;							///< Log level

@@ -274,20 +274,40 @@ void JBLogger::setOutput(Stream &stream) {
 	_output = stream;
 }
 
+Stream& JBLogger::getOutput() {
+	return _output;
+}
+
 void JBLogger::setLogLevel(LogLevel level) {
 	_logLevel = level;
+}
+
+LogLevel JBLogger::getLogLevel() {
+	return _logLevel;
 }
 
 void JBLogger::setShowLogLevel(bool value) {
 	_showLogLevel = value;
 }
 
+bool JBLogger::getShowLogLevel() const {
+	return _showLogLevel;
+}
+
 void JBLogger::setShowModuleName(bool value) {
 	_showModuleName = value;
 }
 
+bool JBLogger::getShowModuleName() const {
+	return _showModuleName;
+}
+
 void JBLogger::setShowTimestamp(bool value) {
 	_showTimestamp = value;
+}
+
+bool JBLogger::getShowTimestamp() const {
+	return _showTimestamp;
 }
 
 void JBLogger::_printPrefix(LogLevel logLevel) const {
@@ -326,6 +346,9 @@ void JBLogger::_printPrefix(LogLevel logLevel) const {
 		_output.print(": ");
 	}
 }
+
+
+
 
 
 
