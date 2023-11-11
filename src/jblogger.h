@@ -23,7 +23,7 @@
 #include <avr/pgmspace.h>
 #endif
 
-#define JBLOGGER_VERSION "1.0.2"	///< Version of the library
+#define JBLOGGER_VERSION "1.0.3"	///< Version of the library
 #define MAX_MESSAGE_LENGTH 128		///< Maximum length of a formatted log message
 
 /// @brief Log levels
@@ -132,6 +132,8 @@ public:
 	/// \param message 			The error message, which can be of any type 'T'.
 	/// \param args 			Additional arguments to be formatted alongside the message.
 	///
+	/// \note You can pass a message of any type 'T' supported by overloads of the log() function.
+	///
 	template<class T, typename... Args>
 	void error(T message, Args... args) {
 		log(LogLevel::LOG_LEVEL_ERROR, false, true, message, args...);
@@ -149,6 +151,8 @@ public:
 	///
 	/// \param message 			The error message, which can be of any type 'T'.
 	/// \param args 			Additional arguments to be formatted alongside the message.
+	///
+	/// \note You can pass a message of any type 'T' supported by overloads of the log() function.
 	///
 	template<class T, typename... Args>
 	void warning(T message, Args... args) {
@@ -188,6 +192,8 @@ public:
 	/// \param message 			The error message, which can be of any type 'T'.
 	/// \param args 			Additional arguments to be formatted alongside the message.
 	///
+	/// \note You can pass a message of any type 'T' supported by overloads of the log() function.
+	///
 	template<class T, typename... Args>
 	void debug(T message, Args... args) {
 		log(LogLevel::LOG_LEVEL_DEBUG, false, true, message, args...);
@@ -205,6 +211,8 @@ public:
 	///
 	/// \param message 			The error message, which can be of any type 'T'.
 	/// \param args 			Additional arguments to be formatted alongside the message.
+	///
+	/// \note You can pass a message of any type 'T' supported by overloads of the log() function.
 	///
 	template<class T, typename... Args>
 	void trace(T message, Args... args) {

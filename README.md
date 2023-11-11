@@ -13,6 +13,11 @@
 - Support for logging hex and ASCII binary buffers.
 - Simple and straightforward API for logging messages.
 
+## Documentation
+
+For more details on how to use JBLogger and customize its behavior,
+refer to the [JBLogger documentation](https://jonnybergdahl.github.io/jblogger/).
+
 ## Installation
 
 You can install the JBLogger library in the Arduino IDE using the Library Manager. Follow these steps:
@@ -81,22 +86,26 @@ This will output the data in the following format to the serial monitor:
 
 traceDump():
 ```
-(31059) T LOG: 00000000: 54 65 78 74 0d 0a 4d 6f 72 65 20 74 65 78 74 09  Text..More text.
-(31071) T LOG: 00000010: 7f 20 31 32 33 34 35 ff                          . 12345.                         
+(10771) T LOG: 0000:  4c 6f 72 65 6d 20 70 69 78 65 6c 20 69 70 73 75  Lorem pixel ipsu
+(10782) T LOG: 0010:  6d 0d 0a 71 75 61 6e 74 75 6d 20 63 6f 64 65 09  m..quantum code.
+(10793) T LOG: 0020:  7f 20 31 32 33 34 35 ff 67 65 65 6b 20 73 79 6e  . 12345.geek syn
+(10794) T LOG: 0030:  74 61 78 07 77 61 72 70 20 64 72 69 76 65 20 64  tax.warp drive d
+(10805) T LOG: 0040:  65 62 75 67 67 69 6e 67                          ebugging
 ```
+
 traceHexDump():
 ```
-(31082) T LOG: 54 65 78 74 0d 0a 4d 6f 72 65 20 74 65 78 74 09 7f 20 31 32 33 34 35 ff
+(10816) T LOG: 0000:  4c 6f 72 65 6d 20 70 69 78 65 6c 20 69 70 73 75 
+(10827) T LOG: 0010:  6d 0d 0a 71 75 61 6e 74 75 6d 20 63 6f 64 65 09 
+(10828) T LOG: 0020:  7f 20 31 32 33 34 35 ff 67 65 65 6b 20 73 79 6e 
+(10838) T LOG: 0030:  74 61 78 07 77 61 72 70 20 64 72 69 76 65 20 64 
+(10839) T LOG: 0040:  65 62 75 67 67 69 6e 67
 ```
 traceAsciiDump():
 ```
-(31093) T LOG: Text<CR><LF>More text<TAB><DEL> 12345<NBS>
+(10850) T LOG: 0000:  Lorem pixel ipsum<CR><LF>quantum code<TAB><DEL> 12345<NBS>geek s
+(10851) T LOG: 002e:  yntax<BEL>warp drive debugging
 ```
-
-## Documentation
-
-For more details on how to use JBLogger and customize its behavior, 
-refer to the [JBLogger documentation](https://jonnybergdahl.github.io/jblogger/).
 
 ## License
 JBLogger is distributed under the [MIT License](LICENSE).
