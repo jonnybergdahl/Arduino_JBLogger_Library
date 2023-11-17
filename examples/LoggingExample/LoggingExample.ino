@@ -1,4 +1,5 @@
 #include <jblogger.h>
+#include <string>
 
 // Create a JBLogger instance with the module name "LOG" and set the log level to LOG_LEVEL_TRACE.
 JBLogger logger("LOG", LogLevel::LOG_LEVEL_TRACE);
@@ -9,11 +10,18 @@ JBLogger logger("LOG", LogLevel::LOG_LEVEL_TRACE);
 
 uint32_t counter = 0;                    // Integer value for logging
 const char* text = "Included text";             // Text for logging
-const char* buffer = "Text\r\nMore text\t\x7f 12345\xff"; // Binary data buffer for logging
+const char* charString = "const char* string";             // Text for logging
+const String arduinoString = "Arduino string";
+const std::string stdString = "C++ std::string";
+const char* buffer = "Lorem pixel ipsum\r\nquantum code\t\x09 12345\xffgeek syntax\x07warp drive debugging"; // Binary data buffer for logging
+const uint8_t binary[] { 0xF0, 0xE1, 0xD2, 0xC3, 0xB4, 0xA5, 0x96, 0x87, 0x00, 0xFF };
 
 // Here we execute logging with different log levels and different types of
 // messages.
 void logMessages() {
+	logger.info(charString);
+	logger.info(arduinoString);
+	logger.info(stdString);
 	logger.error("This is an error message.");
 	logger.warning("This is a formatted warning message: %d", counter);
 	logger.info("This is a formatted info message: %d", 42);
@@ -25,6 +33,8 @@ void logMessages() {
 	logger.traceHexDump(buffer, strlen(buffer));
 	logger.trace("traceAsciiDump");
 	logger.traceAsciiDump(buffer, strlen(buffer));
+	logger.trace("traceBinaryDump");
+	logger.traceBinaryDump(binary, sizeof(binary));
 	counter++;
 }
 

@@ -41,7 +41,7 @@ void JBLogger::log(LogLevel logLevel, bool writePrefix, bool writeLinefeed, cons
 }
 
 #ifdef ENABLE_STD_STRING
-void JBLogger::log(LogLevel logLevel, bool writePrefix, bool writeLinefeed, std::string message, ...) {
+void JBLogger::log(LogLevel logLevel, bool writePrefix, bool writeLinefeed, std::string& message, ...) {
 	va_list args;
 	va_start(args, message);
 	log(logLevel, writePrefix, writeLinefeed, message.c_str(), args);
@@ -49,7 +49,7 @@ void JBLogger::log(LogLevel logLevel, bool writePrefix, bool writeLinefeed, std:
 }
 #endif
 
-void JBLogger::log(LogLevel logLevel, bool writePrefix, bool writeLinefeed, String message, ...) {
+void JBLogger::log(LogLevel logLevel, bool writePrefix, bool writeLinefeed, String& message, ...) {
 	va_list args;
 	va_start(args, message);
 	log(logLevel, writePrefix, writeLinefeed, message.c_str(), args);
@@ -322,6 +322,35 @@ void JBLogger::traceAsciiDump(const void* buffer, uint32_t size)
 		}
 	}
 	_output.println();
+}
+
+void JBLogger::traceBinaryDump(const void *buffer, uint32_t size) {
+	char hexValue[10];
+	const auto* pointer = static_cast<const uint8_t*>(buffer);
+
+	if (LogLevel::LOG_LEVEL_TRACE > _logLevel) {
+		return;
+	}
+
+	for (uint32_t i = 0; i < size; i += 4) {
+		_printPrefix(LogLevel::LOG_LEVEL_TRACE);
+		// Print index
+		snprintf(hexValue, 10, "%04x: ", i);
+		_output.print(hexValue);
+		_output.print(' ');
+
+		for (uint32_t j = 0; j < 4; j++) {
+			if (i + j < size) {
+				snprintf(hexValue, 10, "%02x:", pointer[i + j]);
+				_output.print(hexValue);
+				for (int8_t k = 7; k >= 0; --k) {
+					_output.print((pointer[i + j] & (1 << k)) ? '1' : '0');
+				}
+				_output.print(" ");
+			}
+		}
+		_output.println();
+	}
 }
 
 void JBLogger::setOutput(Stream &stream) {

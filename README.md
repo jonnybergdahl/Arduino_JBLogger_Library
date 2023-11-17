@@ -72,14 +72,16 @@ logger.info("This is a formatted message with a number: %d", 42);
 ```
 
 There is also support for logging data in hex and ASCII formats. Depending 
-on your needs there are three different methods for logging data:
+on your needs there are four different output formats for logging data:
 
 ```cpp
-const char* buffer = "Text\r\nMore text\t\x7f 12345\xff";
+const char* buffer = "Lorem pixel ipsum\r\nquantum code\t\x09 12345\xffgeek syntax\x07warp drive debugging";
+const uint8_t binary[] { 0xF0, 0xE1, 0xD2, 0xC3, 0xB4, 0xA5, 0x96, 0x87, 0x00, 0xFF };
 
 logger.traceDump(buffer, strlen(buffer));
 logger.traceHexDump(buffer, strlen(buffer));
 logger.traceAsciiDump(buffer, strlen(buffer));
+logger.traceBinaryDump(binary, sizeof(binary));
 ```
 
 This will output the data in the following format to the serial monitor:
@@ -106,6 +108,11 @@ traceAsciiDump():
 (10850) T LOG: 0000:  Lorem pixel ipsum<CR><LF>quantum code<TAB><DEL> 12345<NBS>geek s
 (10851) T LOG: 002e:  yntax<BEL>warp drive debugging
 ```
-
+traceBinaryDump():
+```
+(113210) T LOG: 0000:  f0:11110000 e1:11100001 d2:11010010 c3:11000011 
+(113222) T LOG: 0004:  b4:10110100 a5:10100101 96:10010110 87:10000111 
+(113222) T LOG: 0008:  00:00000000 ff:11111111 
+```
 ## License
 JBLogger is distributed under the [MIT License](LICENSE).

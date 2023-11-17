@@ -86,7 +86,7 @@ public:
 	/// @param message  		The format string for the message, with optional format specifiers.
 	/// @param ...      		Variadic arguments to be formatted according to the format string.
 	///
-	void log(LogLevel logLevel, bool writePrefix, bool writeLinefeed, std::string message, ...);
+	void log(LogLevel logLevel, bool writePrefix, bool writeLinefeed, std::string& message, ...);
 #endif
 
 	/// @brief Logs a String message with the specified log level.
@@ -102,7 +102,7 @@ public:
 	/// @param message  		The format string for the message, with optional format specifiers.
 	/// @param ...      		Variadic arguments to be formatted according to the format string.
 	///
-	void log(LogLevel logLevel, bool writePrefix, bool writeLinefeed, String message, ...);
+	void log(LogLevel logLevel, bool writePrefix, bool writeLinefeed, String& message, ...);
 
 	/// @brief Logs a __FlashStringHelper* message with the specified log level.
 	///
@@ -252,6 +252,15 @@ public:
 	/// @param size The size (in bytes) of the memory buffer.
 	///
 	void traceAsciiDump(const void* buffer, uint32_t size);
+
+	/// @brief Logs a a binary dump of a memory buffer with the TRACE log level
+	///
+	/// This function writes a binary dump of a memory buffer to the log output. It takes
+	/// a pointer to the memory buffer and the size of the buffer to perform the dump.
+	///
+	/// @param buffer A pointer to the memory buffer to be dumped.
+	/// @param size The size (in bytes) of the memory buffer.
+	void traceBinaryDump(const void* buffer, uint32_t size);
 
 	/// @brief Allows you to specify the output stream for logging.
 	///
