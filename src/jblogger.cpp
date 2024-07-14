@@ -49,6 +49,7 @@ void JBLogger::log(LogLevel logLevel, bool writePrefix, bool writeLinefeed, std:
 }
 #endif
 
+#ifdef ARDUINO
 void JBLogger::log(LogLevel logLevel, bool writePrefix, bool writeLinefeed, String& message, ...) {
 	va_list args;
 	va_start(args, message);
@@ -76,6 +77,7 @@ void JBLogger::log(LogLevel logLevel, bool writePrefix, bool writeLinefeed, cons
 		_output.println();
 	}
 }
+#endif
 
 void JBLogger::traceDump(const void* buffer, uint32_t size) {
 	char hexValue[10];

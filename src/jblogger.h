@@ -23,7 +23,7 @@
 #include <avr/pgmspace.h>
 #endif
 
-#define JBLOGGER_VERSION "1.0.3"	///< Version of the library
+#define JBLOGGER_VERSION "1.0.5"	///< Version of the library
 #define MAX_MESSAGE_LENGTH 128		///< Maximum length of a formatted log message
 
 /// @brief Log levels
@@ -88,7 +88,7 @@ public:
 	///
 	void log(LogLevel logLevel, bool writePrefix, bool writeLinefeed, std::string& message, ...);
 #endif
-
+#ifdef ARDUINO
 	/// @brief Logs a String message with the specified log level.
 	///
 	///  This function logs a message with the given log level. It supports various options
@@ -118,6 +118,7 @@ public:
 	/// @param ...      		Variadic arguments to be formatted according to the format string.
 	///
 	void log(LogLevel logLevel, bool writePrefix, bool writeLinefeed, const __FlashStringHelper* message, ...);
+#endif
 
 	/// @brief Log a message with the ERROR log level
 	///
