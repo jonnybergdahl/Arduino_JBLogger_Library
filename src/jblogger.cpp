@@ -87,6 +87,12 @@ void JBLogger::traceDump(const void* buffer, uint32_t size) {
 		return;
 	}
 
+	if (size == 0) {
+		_printPrefix(LogLevel::LOG_LEVEL_TRACE);
+		_output.println("0000: (null)");
+		return;
+	}
+
 	for (uint32_t i = 0; i < size; i += 16) {
 		_printPrefix(LogLevel::LOG_LEVEL_TRACE);
 
@@ -129,6 +135,12 @@ void JBLogger::traceHexDump(const void* buffer, uint32_t size) {
 		return;
 	}
 
+	if (size == 0) {
+		_printPrefix(LogLevel::LOG_LEVEL_TRACE);
+		_output.println("0000: (null)");
+		return;
+	}
+
 	for (uint32_t i = 0; i < size; i += 16) {
 		_printPrefix(LogLevel::LOG_LEVEL_TRACE);
 		// Print index
@@ -153,6 +165,12 @@ void JBLogger::traceAsciiDump(const void* buffer, uint32_t size)
 	uint32_t columns = 0;
 
 	if (LogLevel::LOG_LEVEL_TRACE > _logLevel) {
+		return;
+	}
+
+	if (size == 0) {
+		_printPrefix(LogLevel::LOG_LEVEL_TRACE);
+		_output.println("(empty string)");
 		return;
 	}
 
@@ -331,6 +349,12 @@ void JBLogger::traceBinaryDump(const void *buffer, uint32_t size) {
 	const auto* pointer = static_cast<const uint8_t*>(buffer);
 
 	if (LogLevel::LOG_LEVEL_TRACE > _logLevel) {
+		return;
+	}
+
+	if (size == 0) {
+		_printPrefix(LogLevel::LOG_LEVEL_TRACE);
+		_output.println("0000: (null)");
 		return;
 	}
 
